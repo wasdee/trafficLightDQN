@@ -1,0 +1,716 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 10300.17.0615.2100                               -->
+<workbook original-version='10.3' source-build='10.3.1 (10300.17.0615.2100)' source-platform='mac' version='10.3' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='waiting_time_min_ft0' inline='true' name='federated.0pknmn103dqyx816k6fe90fsk015' version='10.3'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='waiting_time_min_ft0' name='textscan.07pvxpr0jusfif1dpi46m11kb7j6'>
+            <connection class='textscan' directory='/Users/heim/PycharmProjects/trafficLightDQN' filename='waiting_time_min_ft0.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.07pvxpr0jusfif1dpi46m11kb7j6' name='waiting_time_min_ft0.csv' table='[waiting_time_min_ft0#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_SG' separator=','>
+            <column datatype='real' name='sec' ordinal='0' />
+            <column datatype='datetime' name='time' ordinal='1' />
+            <column datatype='real' name='waiting_time_min' ordinal='2' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>sec</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sec]</local-name>
+            <parent-name>[waiting_time_min_ft0.csv]</parent-name>
+            <remote-alias>sec</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[time]</local-name>
+            <parent-name>[waiting_time_min_ft0.csv]</parent-name>
+            <remote-alias>time</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;duration&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>waiting_time_min</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[waiting_time_min]</local-name>
+            <parent-name>[waiting_time_min_ft0.csv]</parent-name>
+            <remote-alias>waiting_time_min</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[waiting_time_min_ft0.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_SG&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Sec' datatype='real' name='[sec]' role='measure' type='quantitative' />
+      <column caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+      <column caption='Waiting Time Min' datatype='real' name='[waiting_time_min]' role='measure' type='quantitative' />
+      <column-instance column='[waiting_time_min]' derivation='Avg' name='[avg:waiting_time_min:qk]' pivot='key' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.464164' measure-ordering='alphabetic' measure-percentage='0.535836' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.0pknmn103dqyx816k6fe90fsk015].[avg:waiting_time_min:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.17wc27v01vv4k51g5ugli0691ju7].[avg:waiting_time_min (waiting_time_min_dqn.csv1):qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.17wc27v01vv4k51g5ugli0691ju7].[sum:waiting_time_min (waiting_time_min_dqn.csv1):qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Singapore&quot;' />
+      </semantic-values>
+      <datasource-dependencies datasource='federated.17wc27v01vv4k51g5ugli0691ju7'>
+        <column-instance column='[waiting_time_min (waiting_time_min_dqn.csv1)]' derivation='Avg' name='[avg:waiting_time_min (waiting_time_min_dqn.csv1):qk]' pivot='key' type='quantitative' />
+        <column-instance column='[waiting_time_min (waiting_time_min_dqn.csv1)]' derivation='Sum' name='[sum:waiting_time_min (waiting_time_min_dqn.csv1):qk]' pivot='key' type='quantitative' />
+        <column caption='Waiting Time Min (Waiting Time Min Dqn.Csv1)' datatype='real' name='[waiting_time_min (waiting_time_min_dqn.csv1)]' role='measure' type='quantitative' />
+      </datasource-dependencies>
+    </datasource>
+    <datasource caption='waiting_time_min_dqn+' inline='true' name='federated.17wc27v01vv4k51g5ugli0691ju7' version='10.3'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='waiting_time_min_dqn' name='textscan.1wsqk1z16p3p2417xt97x0fpaxc0'>
+            <connection class='textscan' directory='/Users/heim/PycharmProjects/trafficLightDQN' filename='waiting_time_min_dqn.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[waiting_time_min_dqn.csv].[sec]' />
+              <expression op='[waiting_time_min_dqn.csv1].[sec]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.1wsqk1z16p3p2417xt97x0fpaxc0' name='waiting_time_min_dqn.csv' table='[waiting_time_min_dqn#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_SG' separator=','>
+              <column datatype='real' name='sec' ordinal='0' />
+              <column datatype='datetime' name='time' ordinal='1' />
+              <column datatype='real' name='waiting_time_min' ordinal='2' />
+            </columns>
+          </relation>
+          <relation connection='textscan.1wsqk1z16p3p2417xt97x0fpaxc0' name='waiting_time_min_dqn.csv1' table='[waiting_time_min_dqn#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_SG' separator=','>
+              <column datatype='real' name='sec' ordinal='0' />
+              <column datatype='datetime' name='time' ordinal='1' />
+              <column datatype='real' name='waiting_time_min' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[sec (waiting_time_min_dqn.csv1)]' value='[waiting_time_min_dqn.csv1].[sec]' />
+          <map key='[sec]' value='[waiting_time_min_dqn.csv].[sec]' />
+          <map key='[time (waiting_time_min_dqn.csv1)]' value='[waiting_time_min_dqn.csv1].[time]' />
+          <map key='[time]' value='[waiting_time_min_dqn.csv].[time]' />
+          <map key='[waiting_time_min (waiting_time_min_dqn.csv1)]' value='[waiting_time_min_dqn.csv1].[waiting_time_min]' />
+          <map key='[waiting_time_min]' value='[waiting_time_min_dqn.csv].[waiting_time_min]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>sec</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sec]</local-name>
+            <parent-name>[waiting_time_min_dqn.csv]</parent-name>
+            <remote-alias>sec</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[time]</local-name>
+            <parent-name>[waiting_time_min_dqn.csv]</parent-name>
+            <remote-alias>time</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;duration&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>waiting_time_min</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[waiting_time_min]</local-name>
+            <parent-name>[waiting_time_min_dqn.csv]</parent-name>
+            <remote-alias>waiting_time_min</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[waiting_time_min_dqn.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_SG&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sec</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[sec (waiting_time_min_dqn.csv1)]</local-name>
+            <parent-name>[waiting_time_min_dqn.csv1]</parent-name>
+            <remote-alias>sec</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[time (waiting_time_min_dqn.csv1)]</local-name>
+            <parent-name>[waiting_time_min_dqn.csv1]</parent-name>
+            <remote-alias>time</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;duration&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>waiting_time_min</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[waiting_time_min (waiting_time_min_dqn.csv1)]</local-name>
+            <parent-name>[waiting_time_min_dqn.csv1]</parent-name>
+            <remote-alias>waiting_time_min</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='DebugRemoteMetadata (size)'>8</attribute>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;double&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[waiting_time_min_dqn.csv1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_SG&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Sec (Waiting Time Min Dqn.Csv1)' datatype='real' name='[sec (waiting_time_min_dqn.csv1)]' role='measure' type='quantitative' />
+      <column caption='Sec' datatype='real' name='[sec]' role='measure' type='quantitative' />
+      <column aggregation='Hour' caption='Time (Waiting Time Min Dqn.Csv1)' datatype='datetime' name='[time (waiting_time_min_dqn.csv1)]' role='dimension' type='ordinal' />
+      <column aggregation='Hour' caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+      <column caption='Waiting Time Min (Waiting Time Min Dqn.Csv1)' datatype='real' name='[waiting_time_min (waiting_time_min_dqn.csv1)]' role='measure' type='quantitative' />
+      <column caption='Waiting Time Min' datatype='real' name='[waiting_time_min]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.447099' measure-ordering='alphabetic' measure-percentage='0.552901' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Singapore&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='waiting_time_min_dqn+' name='federated.17wc27v01vv4k51g5ugli0691ju7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.17wc27v01vv4k51g5ugli0691ju7'>
+            <column-instance column='[waiting_time_min (waiting_time_min_dqn.csv1)]' derivation='Sum' name='[sum:waiting_time_min (waiting_time_min_dqn.csv1):qk]' pivot='key' type='quantitative' />
+            <column caption='Waiting Time Min (Waiting Time Min Dqn.Csv1)' datatype='real' name='[waiting_time_min (waiting_time_min_dqn.csv1)]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.17wc27v01vv4k51g5ugli0691ju7].[sum:waiting_time_min (waiting_time_min_dqn.csv1):qk]</rows>
+        <cols />
+      </table>
+    </worksheet>
+    <worksheet name='waiting_time'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='waiting_time_min_ft0' name='federated.0pknmn103dqyx816k6fe90fsk015' />
+            <datasource caption='waiting_time_min_dqn+' name='federated.17wc27v01vv4k51g5ugli0691ju7' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pknmn103dqyx816k6fe90fsk015'>
+            <column-instance column='[waiting_time_min]' derivation='Avg' name='[avg:waiting_time_min:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[time]' derivation='Hour' name='[hr:time:ok]' pivot='key' type='ordinal' />
+            <column caption='Time' datatype='datetime' name='[time]' role='dimension' type='ordinal' />
+            <column caption='Waiting Time Min' datatype='real' name='[waiting_time_min]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.17wc27v01vv4k51g5ugli0691ju7'>
+            <column-instance column='[waiting_time_min (waiting_time_min_dqn.csv1)]' derivation='Avg' name='[avg:waiting_time_min (waiting_time_min_dqn.csv1):qk]' pivot='key' type='quantitative' />
+            <column caption='Waiting Time Min (Waiting Time Min Dqn.Csv1)' datatype='real' name='[waiting_time_min (waiting_time_min_dqn.csv1)]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.17wc27v01vv4k51g5ugli0691ju7].[avg:waiting_time_min (waiting_time_min_dqn.csv1):qk]' field-type='quantitative' fold='true' scope='rows' synchronized='true' type='space' />
+            <encoding attr='space' class='0' field='[federated.0pknmn103dqyx816k6fe90fsk015].[avg:waiting_time_min:qk]' field-type='quantitative' range-type='uniform' scope='rows' type='space' />
+            <format attr='subtitle' class='0' field='[federated.0pknmn103dqyx816k6fe90fsk015].[avg:waiting_time_min:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.0pknmn103dqyx816k6fe90fsk015].[avg:waiting_time_min:qk]' scope='rows' value='true' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0pknmn103dqyx816k6fe90fsk015].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0pknmn103dqyx816k6fe90fsk015].[avg:waiting_time_min:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0pknmn103dqyx816k6fe90fsk015].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.17wc27v01vv4k51g5ugli0691ju7].[avg:waiting_time_min (waiting_time_min_dqn.csv1):qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0pknmn103dqyx816k6fe90fsk015].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.0pknmn103dqyx816k6fe90fsk015].[avg:waiting_time_min:qk] + [federated.17wc27v01vv4k51g5ugli0691ju7].[avg:waiting_time_min (waiting_time_min_dqn.csv1):qk])</rows>
+        <cols>[federated.0pknmn103dqyx816k6fe90fsk015].[hr:time:ok]</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='51'>
+    <window class='worksheet' maximized='true' name='waiting_time'>
+      <cards>
+        <edge name='left'>
+          <strip size='107'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='100'>
+            <card pane-specification-id='1' param='[federated.0pknmn103dqyx816k6fe90fsk015].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.0pknmn103dqyx816k6fe90fsk015].[hr:time:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 2' width='138'>
+      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
+      LRlTSpL9E+aD1OdOeYxKAAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='waiting_time' width='192'>
+      iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAgAElEQVR4nO2deZAc133fP33Nfe3s7H3hWtwHAfEACVIHbVkWqUi24qrIqtiyU3HFsV2p
+      SqV8VJxy/spfdpxUKnHiHI7kRJGshLJkWwcpXgBJASSIgwCJY7EL7H3vzn30THe//LHYxV6z
+      2GP2GOJ9iijWzrzu/s1Mf7v7/d73/Z4ihBBIJI8o6nYHIJFsJ1IAkkcaKQDJI42+3QFIHk0m
+      B+5y9t1L1Hd04g8EOXVo77bEIQUg2RYija04xbMcPryfnisf8FffeJ2xjCBSG6MppNE3XuDX
+      vvYP0JXNjUM+Akm2Bd1w4fF48Ho8JOKT2HoNsaZ2fLrJ1SuXUYopCs4WxLH5h5BIlufw0ccw
+      FIX9hw/TXrIQqoEqihw5eIje4QTuLbg8K3IcQPIoM3cHME2TXC5XkZ3mcjm8Xi+KsskPcBLJ
+      BpkTgNvtxu12V2zHkUhECkCy45GdYMkjjRSA5JFmzQIQQlAqFhFCkM/nKJYsbKtELp9Hdqcl
+      1caa06BmJs6PX73A5198nu6uLobHkkRDKvmczbEnT1MT8GxGnBLJprBmAXiCUTo72tFcbrw6
+      lFQVlzdER4OfdN4k6NFxHAfLsjYjXomkoqxZANnEJP1DfWgBF+mMScjlAqfA9Z5pnjrTga7r
+      qKqKrusyCyTZ8WxoIEw4Dtw/yYUQqOpMlyIej8s06CZiZzI4mQxGY+N2h1L1bCgLpKgqiqKg
+      KMrcyS/ZfPLvvkfif38TOYi/ceRZW4XY8Til/oHtDuNjgRRAFWLHE1gTE4hCYbtDqXqkAKoQ
+      OxEHRaE0IO8CG0UKoAqx43Hcnfso9vdvdyhVjxRAtSEEdjyB58QJSn1SABtFCqDKcEwT4di4
+      Dx6kJO8AG0YKoMpwUinUQBBXRzuloeGZsRjJulmXAGbzz0KIBf8km4+dSqMFAiheL2oohDU+
+      vt0hVTXrMsO9+fZlPvP8M3xw+SoWHmoCgrHJHE88fRqfW04z3kycZBI1FARFwWhtoTQ4KEeE
+      N8Caz1aXL0xLfQOqy8Outka6RtKYtsOhjgYmU1maa/zSDLeJFKemUMJhLMtCa2nB7O3DOHFi
+      u8OqWtYsgFKxQDw+xcTIMFcu3+TUU6fpv3eT/lyO3UdbpRlus0mlMKJRDMPAs3sXuZ+exzCM
+      7Y6qallXH2Df4f24PX4+8cRJNFXh+LETtO7ZTzTgrXR8kkXY8ThaTQ0ARns7xb5+5Eyk9bP2
+      RyCPj6Ym3/2/InOvN/oClYpJsgLzBaDX1iJMEzubRQvI7389yDRolWHFE2g19y88moZeX4c1
+      MrK9QVUxUgBVhBACJ5lEi9wXgKJgtLRQGhza3sCqGCmAKsLJ5UDTUO7Xb1IUBaO9nVJf3zZH
+      Vr1IAVQRTjqD6vWiaNrca0Z7O0U5N2DdSAFUEU4mjer1wnwBtLZgjY4i5LjLupACqCLsZBI1
+      FEKZN/1U9XhQAwGsycltjKx6kQKoIuz5GaBZdB29LoY1Mro9QVU5UgBVxPwxgFkURcFoa5eT
+      Y9bJmgVgl0w+uvYRtuPQe+cmyXSB8eE+Ll2+jmXLEcnNZEYAkSWvGx1tcm7AOlnzSLBjlUgk
+      sjjCoVgqkUrnGR8Zpz4YYCyZoSnin8lXS596xbHjcdRwBNu2F7yut7ZS+u73lrwueThrvgMY
+      3gCRgA9F06mNRlHEjBVFCAdpfdtclu0DAFpNDcIq4aTT2xBVdbOu0ohpM0Pv3T4y8TEUI0Rr
+      Ux2DYyke2xdAVR8UypJu0MohbBsnm0WPRNDmpUEBhNeHGgwipqcfjBJLVsWaBeCPxDj9dOz+
+      Xx1zrze2VCokyXI42RyKrqO4XEveUzQVo7mZ0uAQrj17tiG66kVmgaoEJ5dFcblQ9OWvWTMj
+      wrIjvFakAKoEJ5NF8bihzOQXV3u7zAStAymAKsFOJNDCYRRFoW80wbkPFhrg9KYmrIlJRLG4
+      TRFWJ1IAVcL8QbBLt0f4yft3F1TiUAN+FMPATiS2K8SqRAqgSpg/CDYylWZgPLngfdXlQqup
+      wRob247wqhYpgCrBTiTQIjN3gOGpDPF0gUx+3uOOomC0t83MEZasGimAKmH2EUgIwchUmta6
+      EAPjqQVtXB2yI7xWpACqACHEnACSWRNVVTjUEaN/bOFjkNHWRmlwSJZLXANrFoBVzHPtyjVs
+      x+LDq+9zp3eY0cF7XLz0AZYtv/hNoWQhTBM14GcikaU25GNXY4T+Rf0AraYGUSziZLPbFGj1
+      seaRYOE4ZLMm6eQkii9GamyEpO7QFAwwlsjSVCPNcJXGyWZA1RC6zsjUNHURH231QS7cGFxo
+      gPN6wdApTU2Bz1d+h5I51iwAw+Mn5POgoODYNrZwUITAdhyMRdYf6QWqDKJQQNE0VLebkckM
+      zbEg7Q2R+30AhbmvWdMwWlqwBodwtbdvZ8hVw7rMcJlijum0hW4libW0E9RN+kdTPBaRZrjN
+      QGRzKB4PqsvFyHSGk52NRAIeVFUhlTOpCT6oyOfqaMcaGEBVz2xjxNXDusxwT52eNcM9cMDV
+      NVUqJMli7EQc7f66y8OTaV58uhNFUWiJBRmaSC8QgNHeQfrHP57xqMsL0EORWaAqYHYQzLId
+      JpM5GqIzZRDb6kMMTCzsCOuNDdhT0zil0naEWnVIAVQBMxNhaoin8/g8Bh5j5sbdVh+mf2zh
+      WIAWicxMjslktiPUqkMKoAqYHQOYTOYJ+93o+szP1t4QXmKJUFwutGgUa1RWiVgNUgBVwOxU
+      yNHpNA3RAOr9Z/u2+hCDEykc54EpTlEUaY1eA1IAOxwhxJwPaHgyTXNtcO49v8eF29CZTucX
+      bDOzboAsl7gapAB2OKJYBMtC9ftmBBB7IABNVWio8TMytXAyvNHWSmlYWiJWgxTADkcUCgAo
+      bjfD9wfBZlEUZVlTnB6L4aQzc9tKyiMFsMOZPYmLqk7OLBENLVyGqm2ZjvBs/VA5OebhrFsA
+      QjiMDA2SzOTJZ1MMDY/Jpao2ATudRvH5SORLeN36XAp0lvb60JJU6Ey5xFZKsmz6Q1n3or6Z
+      +BiDo3GK94ZwGTaGouMOhIiF5EJ5lWQuA5TME/K5MfSF16yWuhCj02ks20HXHrw3WyXCd/qp
+      rQ65qli3ALz+MMK8y/hEil27G2kK+cmZRSzLkOsEV5DS1CRqOMzgeIKGqH/J9+rSFDwunfHp
+      NHWRBw5QrbWF7JtnKckR4RVZtwBUTcft0dl7cB8ekeVm/zhPPbNHrhNcYUQyhVFby1g8R2td
+      eMmawLouqA37mEwVaK4LP3ijpZX01BQ6oMh1hMuyfgHoLo6ffBJQAEHnIWl/3gzseALj8EGG
+      +9Ic2V235P35maDjexvmXtfrZjJBTsFEkwIoy4ayQIoy40Wf+b88+TcDOxFHjdQwMp2had4g
+      2Hza65exRBgGel0d1vDwVoRZtcg06A5GOA5OMkXe7cVxBCGfe9l27Q1h+seSS7JwRocsl/gw
+      pAB2MKJYRNgWaaFh6Cpe9/JPrE21ASaSOUqL1geY8wTJ/HRZpAB2MDMCsJksOERDXgxdW7ad
+      z2PgdelMpxZ5gtpaZ6pESAGURQpgByMKJjiCkWxpgQluMS5doyboYTy+sBqE3tiINTEBcuWY
+      sqwoAMdxsG1bXkG2CTuZRAsFGZnOLvAALUZRFFrrw0vKpKjBIIquY8fjmx1q1VJWAIVCgW9+
+      85u8/PLLFGXF4W1hdiLM8FR6RQHAjCViYFGhLGW2XKLsCJelrAA0TcNxHHn130bseBwRCjOV
+      zNNQ41+xbXtDmP7x1JL+rpwcszJlBTAwMMCuXbtwLbMkD9w3ww30MxlPkcsk6R8YlsmGCmMn
+      EhQ8fhwhCHiX/x1maagJkMgUMEsLrRJGezul/gF5IStD2ZHgZDJJoVAo+8WZmSS3u3uxbIdw
+      yIVHc+ENR6gLyYpklcKOx8nEWtA1Fb9nZQH4vQaGrpLIFGi8XzUCwGhtoTQ4tNmhVi1lBVAq
+      lTBNk0AggKouvVEIHIq2g6EaaC4v9SE/ebOEZVnSDFchrKlpxmraqY/4sG1rxWSOCkT8HoYn
+      ktQG5w2YRaPYiQSlbBbFvfxA2qNMWQGEQiFSqRSmaS57F9AMF16XhssTIOiGmwMTnH56L7qu
+      STNcBRC2jcjlmLA0WupCS0xwy9HeEGZoKsupA/PaGgZ6UxNibAzX3r2bGHF1UlYAU1NT5PN5
+      VFVdVgAuT5Bnn3t27u99B6UZrpKIkoUoFhnNOxx8SAZolvaGMN1D00ten5kc049bCmAJZQXw
+      zDPPkM/ncRynbEdYnvCbh7BKiGKRkbzD8ysMgs2nrT7M65fvIYRY8NsYra2yH1CGFccBvvWt
+      b/H973+fuBxI2XJEPk/Rssk6CrXh1SUW6iM+MvkiheKiTFBzMyXpCl2WsgJwu900NMz4y4PB
+      1V2BJJXDTiQwvX5KtkPIv7rOa9DnRkEhlTUXvG40N2ENj0hT3DKUFYBpmiQSCWKxmFzsYhuw
+      43GyLh8et47Xtbp5Sy5DIxr2MjK9sC6oFovhZDI4pllmy0eXsgJQVZV0Oi3nlG4TdjzBiKXR
+      XBtcU1+rvT681BKhqmj19VijcgnVxaxohvP7/fh8PtnZ3QbseJwpYTzUA7SY9voQ/YsKZQEY
+      TY1YIyOVCu9jQ1kBjI2NsWvXLukG3SbseJyE5lnRBr0cs4WyFv9msiO8PCtaIY4fP47jOKsa
+      hJFUjtmCuCNWkM/VBh6+wTxiYR/ZfIl80cLnfvC76S3N5N+/VOlQq56yd4CLFy/y5ptvcu7c
+      uYf2A8T9RfIkFcJxsNIZHK9/SSnEhxH2u7GFQya30MJuNDdTGpJ3gMWUvQOcOXOGAwcOlN2w
+      ZGa5fv0jBkYTtDcGiCdMHn/mDCHfyqYtycMRto2ZzmA1+YgEPGva1tA16iN+hibT1M+zUOsN
+      DdhTU4hSSdYJmkdZAXR2dnLr1i0sy6KxsZFYLLbgfcPtZ097A65QI6IQ59jeehLZPD6XKs1w
+      G0QUTAqpDJ5DIRAOpdLa7q6tdUF6R6Y5uqv2wYuKghoKYY6NoTU0lN/4EaOsAEzTpKurC9u2
+      +eijj/ilX/olNG3+pGxBd88wx588zQcXe7k6Ms4Tz7bJynAVwEokyDsK9fWRdfW/OhpruN0/
+      uWBbIQR6fR1iagqjtbWS4VY1ZQXg8Xjw+/2USiVOnDixrCX6E6dPoygKjz/1HI7joKrLVy2Q
+      rI2ZDJB7zSnQWdrqQ7x+6S6OEHPLKSmKMpcJ8p44Uclwq5oVvUADAwM4jkNLS8syV/MH1eAU
+      RUHTNLksbYWw4wmS60iBzlIX9pHOFzGX8QRZsiO8gBXnBB8/fpzOzs5Fjz6SzcaamCDlDtBa
+      F1rX9pGgF1VVmEouqhO0exfF3t6NB/gxoqwA+vv7icfjdHd3yw7tFmNPT1PwBYhF1je9VFMV
+      2urC9I0tXCHGaGycWURbVvmYY0U3aDKZxLIscrncVsb0SCOEwI7HUSKRBQNZa6WtYaklQnG5
+      UINB7KmpjYb5saGsABzHwe/309bWRjgcLtdMsglYiSTB+tiGsmizprgFlghNQ4vWzFSLkwAP
+      cYMGg0HGx8flI9BW4jgUU2mCDbUPb7sCzbEgY/Es9qJFtI3mZlkyfR5lBVBXV8fFixe5d+8e
+      pvSRbx2OoJRMEaqPPbztCtRFfCSzBYqlhaUkdGmJWEBZAei6zqc+9SmCwbX50SUbQxRNzLxJ
+      pK5mQ/vxuQ18boPJ5ML+m3SFLqSsAK5cucLQ0BCNjY24y9STGR3q4+7ACJnkFHd6enGka3rD
+      2IkEeZeXuoeUQnwYiqLQdn/hjPnoTTMVo4WsGA2sIIDZkijlnKBmJsGNm3fxul3cvN2Fk00w
+      mZLZoo1iTcfJe/zEVjkRfiXa60NLF9H2elFdLrmI9n3KWiGOHDnC+fPnuXTpEs8+++yS0iil
+      YgHV8HHjw+uEIiEiAR+FoqwMt1GKU1O4amvWZYJbTEssyFvX+hdexFQVxe/HHB9HhNY30PZx
+      oqwA7ty5Qzgc5nd+53fw+ZZejfzhWoKuHoQrRjQAt4emeOq0rAy3YVIpAo31FZmE1FYfZjyR
+      Q9U0tHleLqOpCTE+gXHo0IaPUe2UFcDp06eBmRqhiwstASiawSeePjP39579mxThI0Z+YhKj
+      NlqRfTVEA0yn8pQsB801TwAtLVWRChVCYN64gWvfPtRNqmtatg8ghKBQKNDd3U0+ny/XTFJB
+      hBAoySShpvqK7M/j0okEPIwtKpNSLbPDRKHAxB//W8wbNzbtGGUFUCwWeemllzh//jwvv/yy
+      rA20ReQmpnDXbiwFOp/2htCSpZP0pias0VHEDv9NCzduIEwTs7tn046xohvU4/EQCARoaWnZ
+      tAAkC8lNTqOFIxXbX1t9mIGxhZ4gNRRECAcnkymz1fYjhCB/8X28Tz2Jeev2plW1W7EuUDAY
+      pLW1lZMnTy47IUZSWfJmCXchh69uYzaI+bTdXzxvvidI9XpR3W7sRHKFLbcZ26Zw/UPCX/oS
+      1vg4ziY9hpc9qxVFwTAM+vv7ZXW4LWJydBrDpaN5Ktfha60LMjSZXvCaomlosTqssZ1bKc68
+      3YUWjWK0t6HXRikNDm7KcVbsA/h8PgzDkBNitojCxCRGNEolp9Y1RgNMJXOUrIXP+0ZLM6Wh
+      nVsyPX/xIr4nHmcsmUffsxez686mHKesAF566SXu3r1LJBLB41lbaQ7J+siNT6JHK9cBhvtl
+      Umr8DE8tvAvsZFeocBxyly9jHjzK7/7ZT7jjqpnpB2wCZQXwla98hU9+8pMUi0XpBt0iMqMT
+      aJHKCgBm5gb0jS6aHdbSTGl4ZEeWvSzeu4fq8fCjeylsx+E2AUqDg5tS3XpFN2hLSwuf//zn
+      y5rhZhFCYEtz1YbJjk+g1VReAId21fHhvYWTYLSaGpx8HlEoVPx4GyX//iXMA0d540ovv/3l
+      J7k2nkXxeTeluvW6UztOKccrr77GzZ4+Lr/3Nm++9ibJrLxTrBchBLmxSbSayqVAZ/nE/iYu
+      dy282qt+P4qi4KTTK2y59cymP39cCPDpxzo41dlEtuSQqmmg2N1d8eOtbuWFZRBCpcbvIT4x
+      SdAX4nh9gGSugN+tSTPcOkhkChjZNIRCFc+61QRc+Dw63YNT7Gq8P71VUVAjYcyRUcQm3HXW
+      izU0RDKV40IC/vTpTnRVsKsxTM90lOiNm7g/+VxFj7duAThCgKaTz5m4tTwfjE7wxLOtsjLc
+      OplMJgiU8rhitZtSjftUZxPX703Q2fZgppnR2oozNopx4njFj7dech9c46Jaw+ee2kc0PDMn
+      4tT+Zq6/O83JvmvoKCjGuk/bJax7T4bbyycef2LuJHccR6ZLN8DIdIaIVdiUPgDAqQPNfOf1
+      j/jF5w7NZVl32uyw2cefu7EO/sWZB4WZj+2p569fcyjZAmtqEqOxsWLH3NDwrqqqKIoyVxlO
+      sn5GJlMEnSJapPJ9AICDbbWMTKVJ5R50emcrxe2UTJA1Ps7E0DiP/cxT+D0P7oKxsA9vwMeY
+      O0Tx7t2KHlP6G3YIybEpXAE/il652/t8XIZGZ2uUj+Zlg7S6GHYygdghI/2Fqx8wGm3iZ08f
+      WLjOsa5xqKOOrk0YD5AC2CFkxicxNiEDNIuiKJy8nw2aRQuFEJaN2CGFz1IX3qPjs5/C51na
+      BzrZ2cgtNUSxp6ei85mlAHYAJcumMDmNvkmPP7Oc3NfI9bvjWPaMLULxeFB9Xuzp6U097moo
+      lmysZJJdZx5fNnmyrzXKtMtPOp7GTlbOxCcFsAMYnEjhymc3ZQxgPrVhHwGvi977o8JzJdN3
+      wOSY61e70HbvwQgsXw0j7HdTWx9lVPFQ6uur2HGlAHYAr1y8S5tbbFoGaBZNVTi6p54Pukfn
+      XtN3QCaoULT48OW3qDl1omzqXFEUTuxr4JYeqWg/QApgmxmPZ3n/9jDPtAU3XQCKoiwZFZ5x
+      hW6vAM590EfNvdu4D6w8sfz43kZ63DWYXXcqNptNCmCb+bvzXTx3rJ1AKb/pj0AAe1tqmErl
+      iadn0qF6QwP25OS2FcrKFUr85Ow19it5FNfKnrO2+hDFWD2JkXGcbGU67lIA28hUMseFjwZ5
+      8elO7Hhi0+8AMFMysaMhzK3+SWD7TXFvXLlH7eQI0b0dqMGV10R2GxqtHU2MFhVKQ5WZILMh
+      AUyP9nPl+l16bl/n3LnzFErSEbpahBD84MIdTh9uJRryYsfjWyIARVE4tb+JS7dn0qFqIACq
+      ip1KPWTLypPJF/nhhTt81pXC+8Ty2Z/5zKRyG7njjlasH7DuURfbKnCzux+fv460bXGgNcZ4
+      IkNzjV+a4VZBIlPgnev9/NHXnsMqFHByORyvd0umnx7piPH9t2+Ty5sYuorW2IA5MAixjVWk
+      Xisvv9fN7hoPjX3jGIcPr+qzd7bUcDZQR+HWLXylFzYcw7oFYObSoMLA0CB1MS+Tjk19bYs0
+      w60CIQSvXurl1P5mmmNh7MlJNL8fw+1G2QJLSWMshM9jMDydZV9LFHdrK87o6KaY8MqRypq8
+      euke//xEBL0vgruxAWUVhReaY2FoaSXd9Rp1to26wdmK634E8oXqOPP0Mzz/6Wc4fvgg3mgD
+      sdDGC7o+CiSzJueu9fOFZ/aDEKT+5m9xHzoIW1R5Q9dUju6u5+qdmXToVqdChRD86N1ujuyq
+      I9Z/B++pU6s6+QFUVWH3gQ7GMqWKTJDZ2DeuqAQCXvyhKHt2tcllUleBEPDq+3c5squO5toA
+      mVdfo3ivl5pf/ZUtvWOe2t/ElTujOEJgNDVijY5tWaGsZNbkjcv3+IWn9mDeuInn5GNr2v7E
+      vkbueaOYt29tOBaZBdpi0nmTN6708sUzBzA//JD0j35M7W//Fqp/Y+sBrJU9zTUkMgXi6Txa
+      bQw7ldoSU5wQgr/7aRen9jdRl0ugGAZGU9Oa9rG3Jcp4tAnzVteGnaxSAFvMG5fvsa81SqOd
+      Zfovvk70H/06RlPl/O2rxe8xaK0Lcat/Ci0SRhSLW2KKm0jkOPtBH7/w3EHyly7hOfnYmvs9
+      Aa8L9549ZO7egw0mW6QAtpBsocgrF+/yxcdamf7Pf07whZ/HffTItsQymw69fHsERdPQG+op
+      jY4+fMMNYBYt/sNL7/JzT+ylLuCicO0a3lMn17wfRYH2w3uYmk5v2MgnBbCFnL3SR0csQOiH
+      f41rzx4Czz+/rZmyY3vquTM4RaFozU2O2SwcIfjzv71EbdjHl587SGl0FFEs4WpvX9f+ju5p
+      oN9XS+F214bikgLYIgpFix9e6OJnprsQuSyRr35lS1KeK9EQ9aNrKkMTqft1gjZPAC+9eYOR
+      qQz/9EuPo2kq+UuX8Rw/hrLO1Gt7fZhEfSvmrVsb6gdIAWwR5z7oo22kh6aBLmp/8zc3bcGH
+      taCpKsf3NnDlzih60+YVynrrWj9vXOnl9375GTwuHWHbFK5cxfv4J9a9T01TCR05SL6re0OV
+      o6UAtoCSZXPx1Xf58vRNYr/zW1tielstp/Y3cbV7FK2uDntqCuzKpkJv90/y9R9d5fe/eoZI
+      YGbQyp6exo7Hce3du6F9Nx3uJDE6saHaRhsSgBBiwT/JUoQQfHDlDi/cOkvLb/w6RkfHdoe0
+      gL0tNUwkcmS8AexUElEqVmzfo9MZ/vQ7F/itX3yC9obwXH8nf+ky7qNHNnwXPLS7niF/LeYG
+      +gHrFoBVzHP54nu8d+k63beu8dZb58kXpRluMaJUwvvtv2T3Fz+H76knd5w9xO9xsbspws3B
+      OHq0tmIl09M5kz/59k/50rMHONXZOPe5heOQv3QZ3+OPb/gYNUEv9q69mLfXb4xbtxdId3kI
+      +Qy6x9O4dR8HW+uYSEoz3AKEIPGN/wXBIP4vvLhj11k4sbee928N09nUiDkwiLLBFYFKlsN/
+      /O57HGiL8rOnOhacC048TmloCG3f3op8H4EjB8lfeJXAOve1bgFYRZNQXSuesVuYZp7R6RLN
+      MWmGm0MI0j/5CV3vXCb2h/8SYwd0estxYl8TP7jQjdLUhL1BU5ztOHz7lQ8Bha/9/Elcxv1M
+      lxAU790j/t/+B74zz+Cq0BrFDccOkv1/f0mjZaF6vWveft2PQIqqks+mOHLiGMcOHybc0Ept
+      UJrhABCC/LVr9H37u/z08c+xf1/zdke0Io21AXRNZdQIYA2vv1CWEIIfv9vDrf5JfvvLT8yd
+      /I5pkvze95n89/+B4IsvEPnlr1Qs9j1tdUz4o5jrLJy77juAprvYtWff3N8dwZ2T2dguhBCU
+      hobIvvY6mXcv8q26x/jyZx8+0WO7URWFk51NXB8bJrZOh6UQgku3R/jhhS7+8Fc+Scjnnrnq
+      9/UT//o3UINB6v/oX6FXeM6BoWt4Dx2kcOs23mPH1rz95pQhe8QQloV58ybpV35CaXgE39NP
+      MfTVf4z14TiPdW69z2c9nOxs5K+6h3h2fBwcB9Y4SNc7muC//+Ay/+zvP0VzLIgoFkm//AqZ
+      114n9KUv4v/kc5s28Bc8dgTzrdfWta0UwEMQQjAyleHliz3E03kUFO7/h8exOJEdpuX2VXrH
+      U1xr2I914gVUfHx0YYBff+ExtCpZXXN/Wy0jmRJFw409NYVev/rFuqdTef70Oxf46s8e41BH
+      HaXBQaa//g0Ul4u6P/g99IaGTb0LRo4cJPWXf4FjmmtOrUoBlMERgjsDU/zg/B26Bqd48lAL
+      p/Y3oakq9uQkhbNnaRm4TePRA2Rf/BJaqJ5jqMDM8/MTh1p44sDOfvafj8els7+tlt57HlqG
+      hlctgKGJFP/u/17guePtPHukhczLL5P+0Y8JfuEFAp/+9LqtDmuhNhZhIlxD7m4vgUMHHr7B
+      PKQAFmHZDpe6Rvi7d26Typn83BN7+Y2/d4qA10Wxp4fMKz+hcOMmviefIPBPvoLe2ECdqrJr
+      uwOvAJ/Y38TQ2z5Kw8N4HzJJZXQ6w3fP3eTKnVE+/9Q+XuysYfKP/wQch7rf/04BPm8AAAgo
+      SURBVF30pqat6/so4Dt4gMyNW1IA66VQtHjzai8/OH+HoM/FF57ez2NRA9F3j+J3LjB64wY4
+      Dv7nP0PkV39lbomhjxMn9jVy1RVccfnUiUSW7567yXs3h/ns43v4k197FvXyRSb/zZ8RfOHz
+      BD/7cxVdwGI1KIpC8Ohhkm+eBb60pm0feQEk0gV+9O4dXr3YTaeS52tRQXt2itJ/+T5xRcG9
+      by/u/fuJPncGV0cHaNrH7sSfpS7iw9XSQml4aUpxKpXnu+du8v7lOzzpLvCvIzau1y+S/tYY
+      7v2d1P/B76O3tGzbd+M/fJDp//l18jkTr2/1/YCPhQBm89ZCgEBw/7+Z1SsdQd4sUShamGYJ
+      s2hRLBTRchnGbtyh/92rtGQm+EORxdfciKtxP+6jT+D+h19Fq60F+Nie8ItRFIXWo52Uvndu
+      5jt1BLnJKW6ffY+ec+9xNDPB53Qbz/59eJoO4n7+OVy7d++Ii4IrHEKPREje7cV7dHWPQUJs
+      sQDmn6iw8GSdfV+xbRSrhD0+TmlwCMXjRugGFiqmUMg7kC45JPIW8YJFPG8Rz5dI50vkC0WU
+      fB53PoM7n8Wdz+Azc4StAiHbJESJEBYhxUYPBIi1NHPqM0dx7+/EtWcPqk8O5B041EHq/xSZ
+      +k9/Rr63j/x0kubDB+h88WncBw9gtLVt2iIeG0FRVXyde5n+6BaNRw/cN2jOjEzbjqBkOSSz
+      BRKZAol0gXimwHQqv4FF8myL2zc+RPfHiPphYDTFsWOH0NTyV4KXzs50mnAcVLuEq2QSMzPE
+      zBR1ZppoIY2RTaObeZKah7jhm/lgGgQMFa8GbkUQFQ5Rq4QoWVAq4VgWNgoaAs3nQ6upQWuK
+      oNU0o9VE0CI1aDUR1FAILRRCDQa3fTLKTuVge4z/2ngUu9dk75kXOf2ZTxCNrFyycEegKHgP
+      HWTwe6/xuquJdDpPNpsnmy2Qz+RQclkiWPjtIi4zT41iEVVKKGKd4962VSKVSvHB9dv4/Tr1
+      gQCu+nYaIj4SiQSRZRZ76PvR6wyffQc9Pk1YtfEbKkZjI0ZzE0ZzM1pTE1Y4QikQBkNHU1W8
+      Lv2Bn6QcQswVd92JV6dq48qdUVrqgtRHtrZSxUaxxsa597t/wKgewKsKArqCVwNDVVADAdRg
+      EC0URA3O/NOCwQ0IoGRy/u13OPL4ae523aAh6EOpbaUx4ieZTBIKhZY8F5rXriPyefSGBtSa
+      CEowuOqCSBLJQ3EcrHu9oKkoHi+Kx4Pi9aC4XJQrWrWhRyDD42F4aJSmuhoGxlKc2htA09S5
+      VSMXC8C3xgJIEsma0DS0/Z1r2mTdd4CViMfjRCKRbc8MSCQPQz5/SB5ppAAkjzRSAJJHGikA
+      ySONFIDkkUYKQPJIIwUgeaSRApA80qxbAEI4DNztIpUpMDEywOWrH2I5sjyipLpYtxVCOA7Z
+      XA5SecaHR6gLBhhPZGiM+BFC4DiOHAmW7HjWLQBV06mLxcjbgKKgKA98/bPIgrmSnc76F8ou
+      mQwMDoErTFNDjMHRFKf2+lHVGTPc7P8lkp2MNMNJHmlkFkjySCMFIHmkkQKQPNJIAUgeaaQA
+      JI80FRGAbZXI5fMbWa1SItkWKiKAK+9f4P3z75LIFiqxO4lky6iIAFzeEAd3t5LOm5XYnUSy
+      ZVSmD+AUuN4zQDQgSwtKqouKjATPLpSt3i9yJUeCJdXCnABM0ySXy1Vkp6VSadmlNoUQy4rC
+      cZw58ay3/ayOF7dfLM6Hta9ELJVqv9JnWm7fa22/HZ91pRi3OnYhxOZ4gSzLWrYy3Ert9VXW
+      9BRCYNv2mto7joO2ymK4a4lls9s7joMQYtWxO44DsOyJsdFYNru9bdtzJsqtjGVTxgHK/WC2
+      bS+xTK/Ufi37F8Ipa79e9krhLN++ErGsvf2MqBezlhNitv2yd4Y1flbHdpZ9vexnFQJ7mW3W
+      8t2s5B52lol/pVhmLwSrab8pAljuh4iP9nL23Ft8ePPesu0XMzLQwzvnL69q38IucuXyZc6e
+      ewdbrKK9ZXL16hXeeOttFk9iW/5HcHj9b/6asdTSR8RlY++9w1vvnGdiOrOq9pcvvsulqzew
+      FwWzXOyFTJJL77/P3/zw5SUnxXLtzeQIr7zxNm+9e3FVsdz44CIXfnqOu8PTD21/r+s6l67e
+      YuDOLd5+5y26+kfKt3dKvPzd75O2BT0fXeHNC9dWjD0xOcqrr7+NVcxx8cJ7nP3pe+X3LQRd
+      H17m2o27jA/38e75d+jqKx+LY5m8/L2/JWtv4UhwLp3hsdNnKGaSq2rf2LqLkNe1qraK5qI2
+      4sMbrFnVB1J0N0GPSi5bWtX+e29+hOqLYhaLq2qvGRoqNsnMUgEsx/TECNnJEdLFpXeBxXgC
+      YXY3h9l7+MSqHjFVw0U6Pkkut7oxGgUFzWUQH3/4gtm7Og/iwmEyV+K5p58kk0issGOdQ/t2
+      YQvo2Lcft778XWaWcG0DDdEQuuEl5DeIPWSB7T37D6ILm5pYHcmpcdDKr06paC4O7GnHdqyt
+      E4Db7+XS+bdQ3KtLlQ719tDd3U1yFYNrVj7B+Us38LpVnFV0acxsikTWwq2zqvaB2hhewyGZ
+      Sq8qdkWoGJpCNrO6pIIvHEGoFiVr5ZNillu9Yxxsb1hV20IyTaC2Dl1bXX+svqmJYsEk0vDw
+      Bb57bt+gp6cbjyo4+9N38QTKL6RhmVlu99yl524vfXe76b13j0y+/AVlcnSQ7u4e7vXe5vKt
+      PjS1/OOUALpvfUTP3R4GBoeJNjSSXeHiU8qnudVzl7u9A/x/xnI2LtqVeRgAAAAASUVORK5C
+      YII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
